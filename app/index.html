@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI Platinum Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies, with a platinum roadmap, missable flags and cited guides.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 official trophies &mdash; tracker, roadmap and guides. Works fully offline; progress is saved in your browser.</p>
+  </div>
+  <div class="progress" id="progressBox" aria-live="polite">
+    <p class="big"><span id="earnedCount">0</span><span class="of"> / 55 earned</span></p>
+    <div class="bar"><div class="fill" id="progressFill"></div></div>
+    <p class="grades" id="gradeCounts"></p>
+    <p class="platinum-note" id="platinumNote">Platinum: Vice Got a Price! unlocks at 54 / 54.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button class="tab active" data-view="checklist" type="button">Checklist</button>
+  <button class="tab" data-view="roadmap" type="button">Roadmap to Platinum</button>
+  <button class="tab" data-view="missables" type="button">Missables <span class="pill" id="missableCount"></span></button>
+</nav>
+
+<section class="controls" id="controls">
+  <label class="search">Search <input id="searchBox" type="search" placeholder="Trophy, mission or place&hellip;" autocomplete="off"></label>
+  <label>Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="side">Side strands</option>
+      <option value="activity">Activities</option>
+      <option value="collection">Collectibles</option>
+      <option value="crime">Crime</option>
+      <option value="partner">Partner</option>
+      <option value="stunt">Stunts</option>
+      <option value="combat">Combat</option>
+      <option value="exploration">Exploration</option>
+      <option value="economy">Economy</option>
+      <option value="misc">Hidden / misc</option>
+      <option value="completion">100% completion</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="statusFilter">
+      <option value="all">All</option>
+      <option value="earned">Earned</option>
+      <option value="todo">Not earned yet</option>
+    </select>
+  </label>
+  <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+  <label class="check spoiler"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+  <div class="io">
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="import">Import progress <input id="importFile" type="file" accept="application/json,.json" hidden></label>
+    <button id="resetBtn" type="button">Reset</button>
+  </div>
+</section>
+
+<main>
+  <section id="view-checklist" class="view">
+    <p class="hint" id="listHint"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Clear the search or widen a filter.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="lede">Five stages, in order. Story first — the chapter and mission trophies come free with it — then side strands, activities, collectibles, and finally the long grinds and the 100% completion gold.</p>
+    <ol class="stages" id="stageList"></ol>
+    <p class="note">Built from the official descriptions: chapter and mission trophies (Chapters 1&ndash;4, the finale, Gone Fishing, Breakfast Run, The Cartel Heist, Child&rsquo;s Play, Headliners, VCIA Takedown, Operation Savage Glory), the 8 stranger strands, the counted activities (42 Shooting Range challenges, 14 drone races, 20 races, 18 meditation spots) and the counted collectibles (3 card sets, 100 WAiNK spots, 100 vehicles, 52 areas, 8 garages).</p>
+  </section>
+
+  <section id="view-missables" class="view" hidden>
+    <h2>Missable trophies — read this first</h2>
+    <p class="lede">Good news: no trophy on the official list is permanently missable in a single playthrough — story missions and side strands can be finished whenever they appear, and the counted grinds are cumulative. The 9 trophies below are the ones that need a specific setup in a single attempt, so they are the only ones you can fail and have to retry. Do them carefully, in the order shown.</p>
+    <ul class="trophy-list" id="missableList"></ul>
+  </section>
+
+  <aside class="detail" id="detailPane" aria-live="polite">
+    <p class="detail-empty">Select a trophy to read its guide, steps and sources.</p>
+  </aside>
+</main>
+
+<footer>
+  <p><strong>Sources.</strong> Trophy names, descriptions and grades are exactly as PlayStation publishes them, via the official list on Exophase and the PSN counts on PSNProfiles. Every guide is written in this guide&rsquo;s own words from those descriptions; where a step has not yet been checked in the game (GTA VI released 19 Nov 2026), the guide says so rather than inventing a location.</p>
+  <p>An unofficial fan guide. Not affiliated with Rockstar Games or PlayStation. No official artwork or logos are used.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
